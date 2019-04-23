@@ -15,16 +15,32 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     int seconds = 0;
     boolean isRunning = false;
+//    boolean wasRunning=false;
     private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView=findViewById(R.id.textVw);
+//        wasRunning = savedInstanceState.getBoolean("wasRunning");
 
+//        if (savedInstanceState != null) {
+//            seconds = savedInstanceState.getInt(" wasRunning ");
+//            isRunning = savedInstanceState.getBoolean(" wasRunning ");
+//        }
 
     }
 
+//    protected void onStop(){
+//        super.onStop();
+//        wasRunning = isRunning;
+//        isRunning = false;
+//    }
+//    protected void onStart(){
+//        super.onStart();
+//
+//        isRunning = wasRunning;
+//    }
     public void onClickStartTimer(View v) {
         isRunning = true;
         mHandler.postDelayed(timeUpdaterRunnable, 100);
@@ -58,7 +74,13 @@ public class MainActivity extends AppCompatActivity {
                         mHandler.postDelayed(this,1000);
                     }
                 };
-
+//    public void onSaveInstanceState(Bundle outState){
+//        super.onSaveInstanceState(outState);
+////        outState.putInt(" wasRunning ", wasRunning);
+//        outState.putBoolean(" wasRunning ", wasRunning);
+//
+//
+//    }
 }
 
 
